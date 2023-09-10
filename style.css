@@ -1,0 +1,157 @@
+/* Reset de Estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos Globais */
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    cursor: default;
+}
+
+section h2:hover {
+    cursor: pointer; /* Define o cursor como uma mão quando passar por cima */
+}
+
+h4 {
+    font-style: italic;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+/* Estilos para a animação de abertura e fechamento */
+.clickable {
+    cursor: pointer;
+}
+
+.conclusion img {
+    max-width: 100%;
+    height: auto;
+}
+
+.open {
+    max-height: 500px; /* Altura máxima desejada para o conteúdo */
+    transition: max-height 0.8s ease-in-out;
+}
+
+.closed {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in-out;
+}
+
+/* Estilos para o vídeo responsivo */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 (56.25%) */
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container-b {
+    position: relative;
+    padding-bottom: 120%; /* Proporção 16:9 (120%) */
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Estilos para informações sobre Silmara Mielke */
+.info-silmara p {
+    margin: 10px 0;
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem; /* Reduza o tamanho da fonte do título principal */
+    }
+    
+    header p {
+        font-size: 1rem; /* Reduza o tamanho da fonte do subtítulo */
+    }
+    
+    section {
+        padding: 1rem; /* Reduza o espaço interno das seções */
+    }
+    
+    h2 {
+        font-size: 1.5rem; /* Reduza o tamanho da fonte dos títulos h2 */
+    }
+
+    /* Faça com que o vídeo responsivo ocupe a largura total da tela */
+    .video-container, .video-container-b {
+        padding-bottom: 0; /* Remova o espaçamento inferior */
+    }
+    
+    .video-container iframe, .video-container-b video {
+        width: 70%;
+        height: auto;
+    }
+    
+    /* Reduza o tamanho da foto da bailarina para dispositivos móveis */
+    .conclusion img {
+        max-width: 100%; /* Faça a imagem se ajustar à largura da tela */
+        height: auto; /* Mantenha a proporção da imagem */
+    }
+   
+/* Faça com que o vídeo da bailarina se ajuste à largura da tela */
+    .video-container-b {
+        padding-bottom: 120%; /* Proporção 16:9 (56.25%) */
+    }
+    
+    .info-silmara p {
+        font-size: 1rem;
+    }
+

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrevista com Silmara Mielke</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Poesia e Atualidade</h1>
+        <p>
+            Ana Julia, Artur, Augusto, Eloise
+        </p>
+    </header>
+
+    <section class="introduction">
+        <h2 class="clickable">Poesia</h2>
+        <div class="content" id="poesiaContent">
+            <h4>Entre a sístole e a diástole<br>
+                Há um corpo que pulsa<br>
+                Há um corpo do sentir e outro do viver<br>
+                Há um corpo que é chama<br>
+                E outro que chama<br>
+                Há um corpo que anseia<br>
+                E outro que devaneia.<br></h4>
+            <h5>Silmara Mielke.</h5>
+        </div>
+    </section>
+    
+    <section class="info-silmara">
+        <h2 class="clickable">Informações sobre Silmara Mielke</h2>
+        <div class="content" id= "infoSilmaraContent">
+        <p>Silmara Mielke possui graduação em Fisioterapia pela Faculdades Integradas Espírita (2006) e em Educação Física pela Pontifícia Universidade Católica do Paraná (1992). Concluiu o mestrado em Filosofia na PUC-PR em 2016, com uma pesquisa sobre a "Re-significação fenomenológica do corpo em Merleau-Ponty". Possui formação profissional em Yoga pela "Yoga Alliance", com a instrutora Daniela Reis (2019). Atuou como professora nas Faculdades Integradas Espírita durante 15 anos, lecionando nos cursos de Educação Física, Pedagogia e Fisioterapia. Realizou palestras sobre Evasão Escolar e Orientação Vocacional em escolas públicas do Paraná, São Paulo e Minas Gerais, e também na cidade de Colombo, abordando o tema "A psicomotricidade na Educação Infantil". Em abril de 2011, realizou um estágio prático em Fisioterapia na Section d'Education Motrice - Collège Marcel Pagnol em Valence, na França. No ano de 2016, fez parte do curso e experiência em "Suporte Básico de Vida" promovido pela American Heart Association. Já em 2017, participou do curso de voluntariado oferecido pela Cruz Vermelha do Paraná.</p>
+        </div>
+    </section>
+
+    <section class="bailarina">
+        <h2 class="clickable">Vídeo da Bailarina</h2>
+        <div class="content" id="bailarinaContent">
+            <div class="video-container-b">
+                <video src="Vídeo.mp4" type="video/mp4" controls="true"></video>
+                <!--<iframe width="150" height="400" src="https://youtube.com/shorts/UV7PM4bcnm0?si=3k0gDRDRlsi7QN2r" frameborder="0" allowfullscreen></iframe>!-->
+            </div>
+        </div>
+    </section>
+
+    <section class="highlights">
+        <h2 class="clickable">Vídeo da Entrevista</h2>
+        <div class="content" id="videoContent">
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/yejmzO7zUOQ" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</section>
+
+<section class="conclusion">
+    <h2 class="clickable">Foto</h2>
+    <div class="content" id="fotoContent">
+        <img src="Poesia.jpg">
+    </div>
+</section>
+
+<footer>
+    <p>
+        &copy; Ana Julia, Artur, Augusto, Eloise. 2° do Médio.
+    </p>
+</footer>
+
+<style>
+    /* Estilos adicionais para a animação */
+    .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.8s ease-in-out;
+    }
+
+    .content.open {
+        max-height: 100%;
+        /* Altura máxima desejada para o conteúdo */
+        transition: max-height 0.8s ease-in-out;
+    }
+
+    /* Estilos para o vídeo responsivo */
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        /* Proporção 16:9 (56.25%) */
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .video-container-b {
+        position: relative;
+        padding-bottom: 120%;
+        /* Proporção 16:9 (120%) */
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<script>
+        const poesiaContent = document.getElementById('poesiaContent');
+        const videoContent = document.getElementById('videoContent');
+        const fotoContent = document.getElementById('fotoContent');
+        const bailarinaContent = document.getElementById('bailarinaContent');
+        const infoSilmaraContent = document.querySelector('.info-silmara .content');
+
+        // Função para alternar a visibilidade dos conteúdos com animação
+        function toggleContent(content) {
+            const isOpen = content.classList.contains('open');
+            // Fecha todos os conteúdos antes de abrir o clicado
+            poesiaContent.classList.remove('open');
+            videoContent.classList.remove('open');
+            fotoContent.classList.remove('open');
+            bailarinaContent.classList.remove('open');
+            infoSilmaraContent.classList.remove('open');
+            // Abre ou fecha o conteúdo clicado
+            if (!isOpen) {
+                content.classList.add('open');
+            }
+        }
+
+// Inicialmente, abre o conteúdo de Poesia
+        toggleContent(poesiaContent);
+
+        // Adicione eventos de clique aos títulos
+        document.querySelector('section.introduction h2').addEventListener('click', () => {
+            toggleContent(poesiaContent);
+        });
+
+        document.querySelector('section.bailarina h2').addEventListener('click', () => {
+            toggleContent(bailarinaContent);
+        });
+
+        document.querySelector('section.highlights h2').addEventListener('click', () => {
+            toggleContent(videoContent);
+        });
+
+        document.querySelector('section.conclusion h2').addEventListener('click', () => {
+            toggleContent(fotoContent);
+        });
+        
+        document.querySelector('section.info-silmara h2').addEventListener('click', () => {
+            toggleContent(infoSilmaraContent);
+        });
+    </script>
+</body>
+</html>
