@@ -71,13 +71,13 @@ footer {
 
 .open {
     max-height: 500px; /* Altura máxima desejada para o conteúdo */
-    transition: max-height 0.8s ease-in-out;
+    transition: max-height 1.8s ease-in-out;
 }
 
 .closed {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.8s ease-in-out;
+    transition: max-height 1.8s ease-in-out;
 }
 
 /* Estilos para o vídeo responsivo */
